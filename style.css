@@ -1,0 +1,106 @@
+body {
+    background-color: #09cfbc;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+}
+
+P {
+    color: black;
+    font-size: 10vw;
+}
+
+#clock {
+    width: 100%;
+    text-align: center;
+}
+
+#clock::before {
+    transform: scaleX(0);
+    transform-origin: bottom right;
+}
+
+#clock:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+#clock::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: hsl(200 100% 80%);
+    z-index: -1;
+    transition: transform .3s ease;
+}
+
+#clock {
+    position: relative;
+    font-size: 5rem;
+
+    block-size: 100%;
+    inline-size: 100%;
+
+    min-block-size: 100%;
+    min-inline-size: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    place-content: center;
+}
+
+@media (orientation: landscape) {
+    body {
+        grid-auto-flow: column;
+    }
+}
+
+#progressBarContainer {
+    transform: rotate(180deg);
+}
+
+.buttonSelection {
+    width: 100%;
+    padding-top: 3rem;
+}
+
+.roundButton {
+    border-radius: 50%;
+    background-color: black;
+    border: 0;
+    width: 5rem;
+    height: 5rem;
+    font-size: 1rem;
+    color: white;
+}
+
+.button1 {
+    float: left;
+    width: 49%;
+}
+
+.button2 {
+    float: right;
+    width: 49%;
+}
+
+.selector {
+    background-color: black;
+    padding: .8rem 1.4rem .9rem .8rem;
+    width: 30%;
+    border-radius: .5rem;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+}
